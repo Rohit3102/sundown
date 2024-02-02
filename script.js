@@ -45,3 +45,9 @@ page4Annimation()
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
   });
+
+  var loader = document.querySelector("#loader")
+
+setTimeout(function () {
+    loader.style.top = "-100%"
+}, 4000)

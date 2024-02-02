@@ -440,100 +440,198 @@ nav{
    
 }
 
-#footer{
-    width: 100%;
-    height: 100vh;
+
+#footer {
     position: fixed;
+    height: 210vh;
     z-index: 9;
+    width: 100%;
     background-color: #000;
+    color: white;
+    z-index: 9;
     bottom: 0;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+    justify-content: flex-end;
     flex-direction: column;
 }
-#footer>h1{
+
+#footer img {
+    width: 100%;
+    /* height: 100%; */
+    /* object-fit: cover; */
+    /* object-position: center; */
+    margin-bottom: 2px;
+}
+
+#footer h1 {
     font-size: 23vw;
-    color: #fff;
 }
-#footer .sun{
+
+
+#footer-div {
     width: 100%;
-    height: 25vh;
-    background: linear-gradient(to top right,#FE330A, #FF661E);
-    filter: blur(10px);
+    height: 40vh;
     position: relative;
+    display: flex;
+    margin-top: -4vw;
+    position: sticky;
 }
 
-.sun .sunl{
-    width: 120%;
-    height: 140%;
-    position: absolute;
-    background-color: #FE330A;
-    top: 0;
-    animation-name: footerannime;
-    animation-duration: 6s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+.foot_left {
+    width: 50%;
+    height: 100%;
+    margin-left: 6vw;
 }
 
-@keyframes footerannime {
-    from{
-        filter: blur(15px);
-        transform: translate(-4%, 0);
-    }
-    to{
-        filter: blur(30px);
-        transform: translate(0%, 30%);
-    }
+.foot_left h2 {
+    font-size: 2.5vw;
+    font-family: neuo;
 }
 
-.footer{
+.foot_right {
+    width: 25%;
+    height: 100%;
+    margin-left: 10vw;
+}
+
+.foot_right h3 {
+    font-size: 1.5vw;
+    font-weight: 200;
+}
+.foot_right input{
+    border: none;
+    border-bottom: 1px solid white;
+    font-size: 1.7vw;
+    background-color: transparent;
+    margin-top: 3vw;
+}
+
+
+.footer-bottom{
     width: 100%;
-    height: 10vh;
-    font-family: new;
-    font-weight: 300;
+    height: 130px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 5vw;
-    border-top: 1px solid #fff;
+    justify-content: space-around;
+    font-size: 1.2vw;
+    font-weight: 100;
+    border-top: 1px solid rgba(231, 229, 229, 0.144);
 }
 
-.footer a{
+.footer-bottom a{
     text-decoration: none;
     color: #EFEAE3;
 }
-.content{
+
+.footer-bottom a:hover{
+    cursor: pointer;
+    color: blue;
+}
+
+#gooey3 {
+    width: 100%;
+    height: 130vh;
+    background-color: #FE330A;
+    position: relative;
+    display: flex;
+    border-radius: 50%;
+    filter: blur(25px);
+}
+
+.go1 {
+    width: 50%;
+    height: 140vh;
+    background-color: #FE330A;
+    position: relative;
+    border-bottom-right-radius: 50%;
+    animation-name: goanime;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+
+}
+
+.go2 {
+    width: 100%;
+    height: 170vh;
+    background-color: #FE330A;
+    position: relative;
+    border-bottom-left-radius: 80%;
+    animation-name: goanime;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    animation-duration: 6s;
+}
+
+@keyframes goanime {
+    from {
+        filter: blur(20px);
+        transform: translate(0%, -5%) skew(0);
+    }
+
+    to {
+        filter: blur(30px);
+        transform: translate(4%, 5%) skew(-10deg);
+
+    }
+
+}
+
+
+#loader {
     width: 100%;
     height: 100%;
-    position: absolute;
+    background-color: #000;
+    position: fixed;
+    z-index: 9999;
     top: 0;
+    transition: all ease 0.5s;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
 }
 
-.content .leftCon{
-    padding: 3vw;
-    padding-left: 8vw;
-    color: #EFEAE3;
+#loader h1 {
+    color: transparent;
+    font-size: 3vw;
+    background: linear-gradient(to right, orange, orangered);
+    -webkit-background-clip: text;
+    text-transform: uppercase;
+    position: absolute;
+    opacity: 0;
+    font-family: new;
+    animation-name: load;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-timing-function: linear;
 }
 
-.content .rightCon{
-    padding: 8vw;
-    padding-left: 8vw;
-    color: #EFEAE3;
-    font-size: 2vw;
+#loader h1:nth-child(2) {
+    animation-delay: 2s;
 }
-.content .rightCon input{
-   background-color: transparent;
-   border: none;
-   font-size: 1.5vw;
-   width: 100%;
-   margin-top: 2vw;
-   color: #ffffff;
-   border-bottom: 1px solid white;
+
+#loader h1:nth-child(3) {
+    animation-delay: 3s;
 }
-    
-    
-.content .leftCon h1{
-    font-size: 2vw;
+
+@keyframes load {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+       
+    }
 }
